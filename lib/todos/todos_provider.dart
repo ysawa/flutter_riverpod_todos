@@ -5,5 +5,3 @@ import 'todos_notifier.dart';
 export 'todos_notifier.dart';
 
 final todosProvider = StateNotifierProvider<TodosNotifier, List<Todo>>((ref) => TodosNotifier());
-
-final todosProvider2 = StateNotifierProvider<TodosNotifier, List<Todo>>((ref) => TodosNotifier());
