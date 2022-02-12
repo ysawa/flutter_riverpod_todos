@@ -9,7 +9,7 @@ void main() {
     // For widgets to be able to read providers, we need to wrap the entire
     // application in a "ProviderScope" widget.
     // This is where the state of our providers will be stored.
-    ProviderScope(
+    const ProviderScope(
       child: MyApp(),
     ),
   );
@@ -17,6 +17,8 @@ void main() {
 
 // Note: MyApp is a HookConsumerWidget, from hooks_riverpod.
 class MyApp extends HookConsumerWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final todos = ref.watch(todosProvider);
