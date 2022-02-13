@@ -3,6 +3,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'todos_provider.dart';
 
+export 'todos_provider.dart';
+
 class TodosListView extends ConsumerWidget {
   const TodosListView({Key? key}) : super(key: key);
 
