@@ -5,16 +5,17 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'todo.dart';
+
 export 'todo.dart';
 
 class TodosNotifier extends StateNotifier<List<Todo>> {
-  // We initialize the list of todos to an empty list
-  TodosNotifier(): super([]);
+  // We initialize the list of riverpod_todos to an empty list
+  TodosNotifier() : super([]);
 
-  // Let's allow the UI to add todos.
+  // Let's allow the UI to add riverpod_todos.
   void addTodo(Todo todo) {
     // Since our state is immutable, we are not allowed to do `state.add(todo)`.
-    // Instead, we should create a new list of todos which contains the previous
+    // Instead, we should create a new list of riverpod_todos which contains the previous
     // items and the new one.
     // Using Dart's spread operator here is helpful!
     state = [...state, todo];
@@ -22,7 +23,7 @@ class TodosNotifier extends StateNotifier<List<Todo>> {
     // will automatically rebuild the UI when necessary.
   }
 
-  // Let's allow removing todos
+  // Let's allow removing riverpod_todos
   void removeTodo(int todoId) {
     // Again, our state is immutable. So we're making a new list instead of
     // changing the existing list.
@@ -36,14 +37,14 @@ class TodosNotifier extends StateNotifier<List<Todo>> {
   void toggle(int todoId) {
     state = [
       for (final todo in state)
-      // we're marking only the matching todo as completed
+        // we're marking only the matching todo as completed
         if (todo.id == todoId)
-        // Once more, since our state is immutable, we need to make a copy
-        // of the todo. We're using our `copyWith` method implemented before
-        // to help with that.
+          // Once more, since our state is immutable, we need to make a copy
+          // of the todo. We're using our `copyWith` method implemented before
+          // to help with that.
           todo.copyWith(completed: !todo.completed)
         else
-        // other todos are not modified
+          // other todos are not modified
           todo,
     ];
   }

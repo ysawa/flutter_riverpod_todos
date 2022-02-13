@@ -25,13 +25,16 @@ class MyApp extends HookConsumerWidget {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Completed ${todos.where((element) => element.completed).length}')),
+        appBar: AppBar(
+            title: Text(
+                'Completed ${todos.where((element) => element.completed).length}')),
         body: const TodosListView(),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           onPressed: () {
             final id = todos.length + 1;
-            ref.read(todosProvider.notifier).addTodo(Todo(id: id, description: 'todo $id', completed: false));
+            ref.read(todosProvider.notifier).addTodo(
+                Todo(id: id, description: 'todo $id', completed: false));
           },
         ),
       ),
