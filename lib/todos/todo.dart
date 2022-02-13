@@ -1,20 +1,11 @@
-import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-@immutable
-class Todo {
-  const Todo(
-      {required this.id, required this.description, required this.completed});
+part 'todo.freezed.dart';
 
-  // All properties should be `final` on our class.
-  final int id;
-  final String description;
-  final bool completed;
-
-  // Since Todo is immutable, we implement a method that allows cloning the
-  // Todo with slightly different content.
-  Todo copyWith({int? id, String? description, bool? completed}) => Todo(
-        id: id ?? this.id,
-        description: description ?? this.description,
-        completed: completed ?? this.completed,
-      );
+@freezed
+class Todo with _$Todo {
+  factory Todo(
+      {required int id,
+      required String description,
+      required bool completed}) = _Todo;
 }
