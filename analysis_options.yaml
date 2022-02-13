@@ -57,6 +57,7 @@ linter:
     - use_raw_strings
     - secure_pubspec_urls
 
+analyzer:
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
