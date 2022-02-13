@@ -1,5 +1,23 @@
 # todos
 
+## Android Studioの設定 
+
+Android StudioのPreferencesを開き、Flutterのメニューを選択します。
+開かれた設定項目の中でEditorの欄はすべてチェックをつけましょう。
+
+![Android Studio Flutter設定](./documents/android_studio_flutter.png)
+
+## Lint
+
+Lintは守りましょう。編集していると、黄色い警告が出ることがあります。
+この警告を無くしていきましょう。
+
+警告を解消する際には、Android StudioのショートカットキーOption+Enterが便利です。
+
+```bash
+flutter analyze
+```
+
 ## @freezedクラス
 
 @immutableクラスを定義するのに便利なのが、 `freezed` パッケージです。
